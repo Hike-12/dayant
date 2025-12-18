@@ -8,11 +8,12 @@ interface RunnerComparisonChartProps {
 }
 
 export function RunnerComparisonChart({ data, personMetricsList }: RunnerComparisonChartProps) {
+  const toNumber = (val: string | number) => typeof val === "number" ? val : parseFloat(val);
   const chartData = personMetricsList.map((person) => ({
     name: person.person,
-    avg: parseFloat(person.averageMiles),
-    min: parseFloat(person.minMiles),
-    max: parseFloat(person.maxMiles),
+    avg: toNumber(person.averageMiles),
+    min: toNumber(person.minMiles),
+    max: toNumber(person.maxMiles),
   })).sort((a, b) => b.avg - a.avg);
 
   return (

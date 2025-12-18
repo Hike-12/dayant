@@ -21,18 +21,16 @@ export function PersonSelector({ people, selectedPerson, onSelect }: PersonSelec
         <SelectTrigger id="person-select" className="h-11 rounded-lg border-0 bg-muted shadow-sm hover:shadow-md transition-shadow">
           <SelectValue placeholder="Choose a runner" />
         </SelectTrigger>
-        <SelectContent 
-          className="rounded-lg border-0 shadow-xl bg-popover" 
-          position="popper" 
-          sideOffset={8}
-          align="start"
+        <SelectContent
+          className="rounded-lg border-0 shadow-lg bg-white text-black"
+          sideOffset={4}
           side="bottom"
         >
           {people.map((person) => (
-            <SelectItem 
-              key={person} 
+            <SelectItem
+              key={person}
               value={person}
-              className="rounded-md focus:bg-accent-brand/10 focus:text-accent-brand cursor-pointer"
+              className="rounded-md focus:bg-accent-brand/10 focus:text-accent-brand cursor-pointer text-black hover:bg-muted/60"
             >
               {person}
             </SelectItem>
